@@ -1,6 +1,6 @@
 # HTL Wien West Diploma Thesis
 
-This is a Typst diploma thesis template for student of the HTL Wien West highschool. It fullfills all required specifications for the "Diplomarbeit".
+This is a Typst diploma thesis template for students of the HTL Wien West. It fulfils all the necessary requirements for the diploma thesis.
 
 ## Usage
 You can use this template in the Typst web app by clicking "Start from template" on the dashboard and searching for `htlwienwest-da`.

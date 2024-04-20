@@ -204,6 +204,8 @@ set page(numbering: "i")
 // set correct header margin
 set page(
   margin: (
+    outside: settings.PAGE_MARGIN_OUTSIDE,
+    inside: settings.PAGE_MARGIN_INSIDE,
     top: settings.HEADER_HEIGHT,
   )
 )
