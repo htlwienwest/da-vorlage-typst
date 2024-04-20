@@ -51,7 +51,6 @@ set page("a4")
 set page(margin: (
   inside: settings.PAGE_MARGIN_INSIDE, 
   outside: settings.PAGE_MARGIN_OUTSIDE, 
-  top: settings.HEADER_HEIGHT,
   bottom: 2cm,
 ))
 
@@ -202,6 +201,12 @@ deckblatt(title, abteilung, schuljahr, autoren)
 pagebreak(to: "odd")
 
 set page(numbering: "i")
+// set correct header margin
+set page(
+  margin: (
+    top: settings.HEADER_HEIGHT,
+  )
+)
 // set common header and footer
 set page(
   header: elems.common_header(title),

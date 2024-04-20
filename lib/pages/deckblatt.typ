@@ -2,7 +2,7 @@
 #import "../settings.typ" as settings
 
 #let deckblatt(title, abteilung, schuljahr, teilnehmer) = {  
-  set page(margin: (left: 3cm, bottom: 3cm, top: 2cm))
+  set page(margin: (left: 3cm, bottom: 3cm, top: 1cm))
   
   let gutter = 3mm
   let img_height = 3.81cm

@@ -1,4 +1,4 @@
-#import "../lib.typ": *
+#import "@preview/htlwienwest-da:0.1.0": *
 
 
 /// Diplomarbeits-Konfiurationen
@@ -23,6 +23,7 @@
 ///  - vorwort: content
 ///  - danksagung: content
 ///  - anhang: content | none
+///  - literaturverzeichnis: function
 #show: diplomarbeit.with(
   titel: "Titel der Diplomarbeit",
   abteilung: "Informationstechnologie",
