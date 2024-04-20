@@ -2,6 +2,10 @@
 
 This is a Typst diploma thesis template for students of the HTL Wien West. It fulfils all the necessary requirements for the diploma thesis.
 
+| Main page | TOC | List of features | Page |
+| -- | -- | -- | -- |
+| ![main page](blob/p01.png) | ![Table of Contents](blob/p08.png) | ![List of features](blob/p12.png) | ![Example page](blob/p19.png) |
+
 ## Usage
 You can use this template in the Typst web app by clicking "Start from template" on the dashboard and searching for `htlwienwest-da`.
 
