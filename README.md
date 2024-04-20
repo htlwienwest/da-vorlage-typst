@@ -23,7 +23,7 @@ This template exports the `diplomarbeit` function with the following named argum
  - `schuljahr`: `string` - The current school year
  - `abteilung`: `string` - The student's department
  - `unterschrifts_datum`: `string` - The submission date
- - `autoren`: `array(dict)` - An array of all authors, represented as dictionaries. Each of them has the followin properties
+ - `autoren`: `array(dict)` - An array of all authors, represented as dictionaries. Each of them has the following properties
     - `vorname`: `string` - Firstname of the student
     - `nachname`: `string` - Lastname of the student
     - `klasse`: `string` - School class of the student
@@ -95,4 +95,4 @@ Beside the `diplomarbeit` function, the template also provides the `autor` funct
 #autor[Your Name]
 ```
 
-Ths will render additional information to the section's heading.
+This will render additional information to the section's heading.
