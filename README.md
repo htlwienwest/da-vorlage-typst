@@ -96,3 +96,23 @@ Beside the `diplomarbeit` function, the template also provides the `autor` funct
 ```
 
 This will render additional information to the section's heading.
+
+
+# Installing
+
+To install the template locally, you can use 
+```bash
+just install
+```
+which uses the [just](https://github.com/casey/just) command runner. 
+
+If you don't want to install `just`, you can run 
+```bash
+bash ./scripts/package @local
+```
+
+
+The installed version can be used via `@local` instead of `@preview`. To create a new typst project from the template, run
+```bash
+typst init @local/htlwienwest-da:<version-in-typst.toml>
+```
