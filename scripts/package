@@ -6,6 +6,7 @@ PKG_PREFIX="htlwienwest-da"
 files=(
   lib/
   template/
+  blob/
   lib.typ
   typst.toml
   LICENSE
