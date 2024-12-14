@@ -91,6 +91,7 @@ show heading: it => {
   if it.level > 2 { return it }  
   let author = elems.elaborated_by
   it
+  v(4mm, weak: true)
   text(9pt, author, style: "italic")
 }
 
