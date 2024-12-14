@@ -136,15 +136,17 @@ show bibliography: set heading(numbering: "1")
 // modify outline entries
 // add spacing between numbering and text
 show outline.entry: it => {
-  let t = counter(heading).display()
+  let t = context counter(heading).display()
   let e = it.element
   if (
     e.has("supplement") 
     and e.supplement == [Abschnitt] 
     and e.numbering != none
   ) {
-    let c = counter(heading).at(it.element.location())
-    numbering(it.element.numbering, ..c)
+    context {
+      let c = counter(heading).at(it.element.location())
+      numbering(it.element.numbering, ..c)
+    }
     h(2mm)
     it.element.body
     box(width: 1fr, it.fill)
