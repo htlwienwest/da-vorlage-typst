@@ -1,4 +1,4 @@
-#import "@preview/htlwienwest-da:0.1.1": *
+#import "@preview/htlwienwest-da:0.2.1": *
 
 /// Diplomarbeits-Konfiurationen
 ///
@@ -14,7 +14,7 @@
 ///     - nachname: string
 ///     - klasse: string
 ///     - betreuer: dict
-///       - name: string | content
+///       - name: string | content | none
 ///       - geschlecht: "male" | "female"
 ///     - aufgaben: content
 ///  - kurzfassung: content
@@ -32,7 +32,7 @@
    (
      vorname: "Hans", nachname: "Mustermann",
      klasse: "5AHITN",
-     betreuer: (name: "Dr. Walter Turbo", geschlecht: "male"),
+     betreuer: (name: none, geschlecht: "male"),
      aufgaben: [
        #lorem(100)
      ]
@@ -40,7 +40,7 @@
    (
      vorname: "Herta", nachname: "Musterfrau",
      klasse: "5AHITN",
-     betreuer: (name: "Dipl.-Ing Hans Kreisel", geschlecht: "male"),
+     betreuer: (name: "Dr. Walter Turbo", geschlecht: "male"),
      aufgaben: [
        #lorem(100)
      ]

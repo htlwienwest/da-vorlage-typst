@@ -64,7 +64,14 @@
           } else {
             ""
           }
-          ([#e.vorname #e.nachname (#e.klasse)], [Betreuer#betreuer_suffix: #e.betreuer.name])
+          // Only show supervisor if it is set
+          let betreuer_content = if e.betreuer.name == none or e.betreuer.name == "" {
+            []
+          } else {
+            [Betreuer#betreuer_suffix: #e.betreuer.name]
+          }
+
+          ([#e.vorname #e.nachname (#e.klasse)], betreuer_content)
         })
         .flatten(),
     )
