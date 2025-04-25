@@ -1,7 +1,5 @@
 
 #let assertType(val, typ, message: none) = {
-  assert(type(typ) == "string", message: "Value hat falschen Typen. Muss `string` sein war aber " + typ)
-
   if type(val) == typ {
     return
   }
@@ -27,8 +25,8 @@
 }
 
 #let assertDictKeys(val, fields, message: none) = {
-  assertType(val, "dictionary", message: message)
-  assertType(fields, "array", message: "Fields Argument muss ein Array sein")
+  assertType(val, dictionary, message: message)
+  assertType(fields, array, message: "Fields Argument muss ein Array sein")
 
   for f in fields {
     let msg = _sentence(message) + "Key `" + f + "` wurde erwartet in `" + repr(val) + "`" 
@@ -37,8 +35,8 @@
 }
 
 #let assertEnum(val, options, message: none) = {
-  assertType(val, "string", message: message)
-  assertType(options, "array", message: "Options Argument muss ein Array sein")
+  assertType(val, str, message: message)
+  assertType(options, array, message: "Options Argument muss ein Array sein")
 
   let msg = _sentence(message) + "Wert `" + val + "` war nicht einer der folgenen Werte `" + repr(options) + "`" 
   assert(options.contains(val), message: msg)

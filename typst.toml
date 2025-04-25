@@ -1,6 +1,6 @@
 [package]
 name = "htlwienwest-da"
-version = "0.2.2"
+version = "0.3.2"
 entrypoint = "lib.typ"
 authors = ["Johannes Zottele <https://github.com/jozott00>", "peterw16 <https://github.com/peterw16>"]
 license = "MIT"

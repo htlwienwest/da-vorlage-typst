@@ -1,4 +1,4 @@
-#import "@preview/htlwienwest-da:0.2.2": *
+#import "@preview/htlwienwest-da:0.3.2": *
 
 /// Diplomarbeits-Konfiurationen
 ///
