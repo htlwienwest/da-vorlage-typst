@@ -168,7 +168,12 @@ show outline.entry: it => {
 
 show link: underline
 
-show raw.where(block: true): set block(stroke: 0.2pt, inset: 2mm)
+show raw.where(block: true): it => {
+  set block(stroke: 0.2pt, inset: 2mm)
+  set align(center)
+  it
+}
+
 show raw.where(block: false): box.with(
   fill: luma(235),
   inset: (x: 3pt, y: 0pt),
@@ -294,19 +299,23 @@ pagebreak()
 
 // -------- Vordefinierte Seiten --------
 
-//Abbildungsverzeichnis
-outline(
-  title: "Abbildungsverzeichnis",
-  target: figure.where(kind: image),
-)
-pagebreak()
+// emit outline for target query (only if there are any entries)
+let optOutline(title, target) = context {
+  let count = query(target).len() 
+  if (count > 0) {
+    outline(title: title, target: target)
+    pagebreak()
+  }
+}
 
-//Tabellenverzeichnis
-outline(
-  title: "Tabellenverzeichnis",
-  target: figure.where(kind: table),
-)
-pagebreak()
+// Abbildungsverzeichnis
+optOutline("Abbildungsverzeichnis", figure.where(kind: image))
+
+// Tabellenverzeichnis
+optOutline("Tabellenverzeichnis", figure.where(kind: table))
+
+// Listingverzeichnis
+optOutline("Listingverzeichnis", figure.where(kind: raw))
 
 // Literaturverzeichnis
 literaturverzeichnis(
