@@ -37,7 +37,7 @@
     [Möglichkeiten der Einsichtnahme\ der Arbeit], v(std_space+6mm),
     [Abgabevermerk], nested_table[Übernommen von:],
     [Approbation], nested_table[Prüfer:],
-    [], nested_table[Abteiluntsvorstand:]
+    [], nested_table[Abteilungsvorstand:]
   )
 ]
 
