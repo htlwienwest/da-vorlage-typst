@@ -30,13 +30,13 @@ assertNotNone(danksagung, message: "Die Danksagung muss in den Diplomarbeits-Kon
 assertNotNone(literaturverzeichnis, message: "Der Pfad zum Literaturverzeichnis muss in den Diplomarbeits-Konfigurationen (`diplomarbeit.with(...)`) gesetzt sein")
 
 if anhang != none {
-  assertType(anhang, "content", message: "Wenn der Parameter `anhang` gesetzt ist, muss er `content` sein. Alternativ kann er auf `none` gesetzt oder aus den Übergabeparametern entfernt werden")
+  assertType(anhang, content, message: "Wenn der Parameter `anhang` gesetzt ist, muss er `content` sein. Alternativ kann er auf `none` gesetzt oder aus den Übergabeparametern entfernt werden")
 }
 
 // check autoren
-assertType(autoren, "array", message: "Der Parameter `autoren` hat einen falschen Typen")
+assertType(autoren, array, message: "Der Parameter `autoren` hat einen falschen Typen")
 for t in autoren {
-  assertType(t, "dictionary", message: "Autor hat falschen Typen")
+  assertType(t, dictionary, message: "Autor hat falschen Typen")
   assertDictKeys(t, ("vorname", "nachname", "klasse", "betreuer"), message: "Autor ist ungültig")
   assertDictKeys(t.betreuer, ("name", "geschlecht"), message: "Betreuer eines Autors ist ungültig")
   assertEnum(t.betreuer.geschlecht, ("male","female"), message: "`betreuer_geschlecht` muss korrekten Wert enthalten")
@@ -133,35 +133,18 @@ show bibliography: set heading(numbering: "1")
 // modify spacing of entires
 
 
-// modify outline entries
-// add spacing between numbering and text
+// modify outline entries.
+// add ":" to entries with a supplement.
+// set spacing between entries.
 show outline.entry: it => {
-  let t = context counter(heading).display()
+  v(2.5mm, weak: true)
   let e = it.element
-  if (
-    e.has("supplement") 
-    and e.supplement == [Abschnitt] 
-    and e.numbering != none
-  ) {
-    context {
-      let c = counter(heading).at(it.element.location())
-      numbering(it.element.numbering, ..c)
-    }
-    h(2mm)
-    it.element.body
-    box(width: 1fr, it.fill)
-    it.page
-    
+  if (e.has("supplement") and e.supplement != [Abschnitt]) {
+    it.indented(it.prefix() + ":", it.inner())
   } else {
     it
   }
 }
-
-
-// show outline.entry: it => {
-//   // v(1.5em, weak: true)
-//   it
-// }
 
 
 // ------- Common Elements -------------
